@@ -29,8 +29,8 @@ Angular CLI は ターミナルやコマンドプロンプトで下記のコマ�
 ### frontend-maven-plugin の導入
 [https://github.com/eirslett/frontend-maven-plugin](https://github.com/eirslett/frontend-maven-plugin)  
 を導入します。
-こちらは、npmやyarn、webpackといった  
-フロントエンド用パッケージ管理ツールをmavenから実行できるようにし、  
+こちらは、npm や yarn、webpack といった  
+フロントエンド用パッケージ管理ツールを maven から実行できるようにし、  
 クライアントサイドアプリケーションで必要なライブラリのダウンロードやビルドまでを  
 maven のコマンドで実行できるようにするプラグインです。  
 
@@ -67,32 +67,21 @@ Angular プロジェクトではビルド後の成果物が `dist` フォルダ�
 Angular プロジェクトではビルド後の成果物がデフォルトでは、  
 `dist/client/` となっていますので、`dist/META-INF/resources/` と変更します。
 
-[angular.json](angular.json)を編集します。  
+[angular.json](angular.json) を編集します。  
 projects -> client -> architect -> build -> options -> outputPath  
 を `dist/client/` から、`dist/META-INF/resources/` と変更します。
 
+### maven のパッケージをして成果物を確認する
+ここまでの変更が完了したら、クライアントサイドプロジェクトの maven のパッケージを行いましょう。  
+`target/classes/META-INF/resources` 配下に、
 
+ - index.html
+ - main-es5.js
 
-## Development server
+等が生成されていることが確認できます。
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`target` 直下に生成される `client-1.0-SNAPSHOT.jar`　にも  
+`/META-INF/resources` 配下に、上記の index.html や main-es5.js 等が同胞されます。
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`/META-INF/resources`　配下に、index.html 等を出力する理由は、  
+[server](../server/README.md) の方で説明します。

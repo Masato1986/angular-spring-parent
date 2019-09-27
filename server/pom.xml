@@ -24,11 +24,13 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- TODO クライアントサイドのプロジェクトを依存性に追加　ここから -->
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>client</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!-- TODO クライアントサイドのプロジェクトを依存性に追加　ここまで -->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -25,4 +25,6 @@ maven プロジェクトのモジュール機能を使って、下記の構成�
 クライアントサイド、サーバサイドのプロジェクト作成時の注意点は  
 [client](client/README.md)プロジェクト、  
 [server](server/README.md)プロジェクト、  
-それぞれのREADME.mdを参照してください。
+それぞれのREADME.mdを参照してください。  
+なお、[client](client/README.md) → [server](server/README.md) の順でお読みください。  
+

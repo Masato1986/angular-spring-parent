@@ -44,7 +44,7 @@ BOOT-INF/lib/client-1.0-SNAPSHOT.jar
 
 `Started ServerApplication in 1.787 seconds (JVM running for 2.148)`  
 とコンソールに出力されたら、 http://localhost:8080 にWebブラウザからアクセスしてください。  
-![トップページイメージ](../../../../images/index.jpg)
+![トップページイメージ](https://raw.githubusercontent.com/Masato1986/images/master/index.jpg)
 という画面が表示されます。
 
 また、コンソールに  

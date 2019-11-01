@@ -1,0 +1,6 @@
+<table>
+  <tr *ngFor="let todoTask of taskList" (click)="clickRow(todoTask)" [ngClass]="onColor(todoTask)">
+    <td>{{todoTask.id}}</td><td>{{todoTask.todo}}</td><td>{{todoTask.priority}}</td>
+  </tr>
+</table>
+<div *ngIf="selected">クリックしたもの：{{selected}}</div>

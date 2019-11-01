@@ -1,0 +1,17 @@
+.click {
+  background-color: aqua;
+}
+
+.not_click {
+  background-color: white;
+}
+
+table {
+  width: 100%;
+  border: 1px solid #808080;
+  border-collapse: collapse;
+}
+
+tr {
+  border-bottom: 1px solid #808080;
+}

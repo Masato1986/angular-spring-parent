@@ -10,7 +10,8 @@ import {TaskDataService} from '../task-data.service';
 export class TaskTableComponent implements OnInit {
 
   taskList: Task[];
-  selected = '';
+  selectedId = -1;
+  selectedTodo = '';
 
   constructor(private taskDataService: TaskDataService) {
   }
@@ -22,11 +23,13 @@ export class TaskTableComponent implements OnInit {
   }
 
   clickRow(taskTodo: Task) {
-    this.selected = taskTodo.todo;
+    this.selectedId = taskTodo.id;
+    const selectedValue = this.taskList.find(value => value.id === this.selectedId);
+    this.selectedTodo = selectedValue.todo;
   }
 
   onColor(taskTodo: Task) {
-    if (taskTodo.todo === this.selected) {
+    if (taskTodo.id === this.selectedId) {
       return 'click';
     } else {
       return 'not_click';

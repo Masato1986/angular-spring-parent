@@ -24,7 +24,7 @@ export class TaskTableComponent implements OnInit {
 
   clickRow(taskTodo: Task) {
     this.selectedId = taskTodo.id;
-    const selectedValue = this.taskList.find(value => value.id === this.selectedId);
+    const selectedValue = this.taskList.filter(value => value.id === this.selectedId)[0];
     this.selectedTodo = selectedValue.todo;
   }
 
